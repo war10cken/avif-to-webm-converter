@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebM Preview - Прозрачность</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #fff;
+            background-image:
+                linear-gradient(45deg, #ccc 25%, transparent 25%),
+                linear-gradient(-45deg, #ccc 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #ccc 75%),
+                linear-gradient(-45deg, transparent 75%, #ccc 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .card {
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        video { width: 100%; height: auto; display: block; background: transparent; }
+        .filename {
+            padding: 12px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            word-break: break-all;
+        }
+        .name {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        .size {
+            font-size: 13px;
+        }
+        .info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            color: #666;
+            font-size: 14px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 WebM Preview (5 файлов)</h1>
+    <div class="grid">
+        <div class="card">
+            <video src="outputs/aza-4x.webm" autoplay loop muted playsinline></video>
+            <div class="filename">
+                <div class="name">aza-4x.webm</div>
+                <div class="size" style="color: #2ecc71; font-weight: bold;">248.1 KB</div>
+            </div>
+        </div>
+        <div class="card">
+            <video src="outputs/billyReady-4x.webm" autoplay loop muted playsinline></video>
+            <div class="filename">
+                <div class="name">billyReady-4x.webm</div>
+                <div class="size" style="color: #2ecc71; font-weight: bold;">197.4 KB</div>
+            </div>
+        </div>
+        <div class="card">
+            <video src="outputs/lickR-4x-1.webm" autoplay loop muted playsinline></video>
+            <div class="filename">
+                <div class="name">lickR-4x-1.webm</div>
+                <div class="size" style="color: #2ecc71; font-weight: bold;">212.8 KB</div>
+            </div>
+        </div>
+        <div class="card">
+            <video src="outputs/monkaMath-4x.webm" autoplay loop muted playsinline></video>
+            <div class="filename">
+                <div class="name">monkaMath-4x.webm</div>
+                <div class="size" style="color: #2ecc71; font-weight: bold;">248.7 KB</div>
+            </div>
+        </div>
+        <div class="card">
+            <video src="outputs/yo-4x.webm" autoplay loop muted playsinline></video>
+            <div class="filename">
+                <div class="name">yo-4x.webm</div>
+                <div class="size" style="color: #2ecc71; font-weight: bold;">200.2 KB</div>
+            </div>
+        </div></div>
+    <div class="info">🔍 Фон в шашечку показывает прозрачность. Если видно шашечку — альфа-канал работает!</div>
+</body>
+</html>
